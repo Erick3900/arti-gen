@@ -1,0 +1,11 @@
+[requires]
+fmt/9.1.0
+tomlplusplus/3.2.0
+boost/1.80.0
+ctre/3.7.1
+ftxui/3.0.0
+tl-optional/1.0.0
+tl-expected/20190710
+
+[generators]
+cmake_find_package_multi
