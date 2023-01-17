@@ -1,0 +1,17 @@
+[cp]
+type = "folder"
+name = "cp-contest"
+root = "{{ name }}"
+folder = "cp-template"
+
+[cmake-project]
+type = "folder"
+name = "cmake-project"
+root = "{{ project_name }}"
+folder = "cmake-project-template"
+
+[cp-problem]
+type = "file"
+name = "cp-problem"
+root = "{{ name }}.cpp"
+folder = "cp-problem-template"

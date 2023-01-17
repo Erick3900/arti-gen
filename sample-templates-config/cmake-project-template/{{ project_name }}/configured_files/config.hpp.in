@@ -1,0 +1,21 @@
+#pragma once
+
+#include <string_view>
+
+namespace {{ project_namespace }}::config {
+
+    static constexpr std::string_view project_author = "@PROJECT_AUTHOR@";
+    static constexpr std::string_view project_author_github = "@PROJECT_AUTHOR_GITHUB@";
+    static constexpr std::string_view project_name = "@PROJECT_NAME@";
+    static constexpr std::string_view project_version = "@PROJECT_VERSION@";
+    static constexpr int project_version_major {
+        @PROJECT_VERSION_MAJOR@
+    };
+    static constexpr int project_version_minor {
+        @PROJECT_VERSION_MINOR@
+    };
+    static constexpr int project_version_patch {
+        @PROJECT_VERSION_PATCH@
+    };
+
+} // namespace {{ project_namespace }}

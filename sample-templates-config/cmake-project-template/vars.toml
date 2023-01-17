@@ -1,0 +1,8 @@
+project_name = "{{ name }}"
+author_name = "Erick Saúl"
+project_namespace = "{{ namespace }}"
+namespace = "arti"
+author_github = "@Erick3900"
+cpp_std = "20"
+project_version = "0.0.1"
+project_description = ""

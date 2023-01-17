@@ -1,0 +1,5 @@
+date = "{{ today }}"
+contest = "{{ name }}"
+author_name = "Erick Saúl"
+author_github = "@Erick3900"
+author_extra = "Twitter: @Erick_Alcachofa\n// Mastodon: @alcachofa@social.linux.pizza"
