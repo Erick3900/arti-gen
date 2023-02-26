@@ -81,6 +81,14 @@ namespace arti {
             return expected_t::unexpected_type{ { errors::ParseError, fmt::format("The template '{}' doesn't have the 'root' property", name) } };
         }
 
+        bool nameParamOptional = [&] {
+            auto fromOpt = templateConfig.get_as<bool>("name_param_optional");
+            if (fromOpt) {
+                return fromOpt->value_or(false);
+            }
+
+            return false;
+        }();
         std::string templateName = templateConfig.get_as<std::string>("name")->value_or("");
         std::string templateRoot = templateConfig.get_as<std::string>("root")->value_or("");
         fs::path templatePath{ fmt::format("{}/{}", arti::config::config_path, templateConfig.get_as<std::string>("folder")->value_or("")) };
@@ -88,8 +96,9 @@ namespace arti {
 
         generator_template temp{
             templateType,
-            templateName,
+            nameParamOptional,
             templatePath,
+            templateName,
             templateRoot
         };
 
@@ -139,10 +148,11 @@ namespace arti {
         return m_Location;
     }
 
-    generator_template::generator_template(types type, std::string name, fs::path path, std::string root)
+    generator_template::generator_template(types type, bool nameParamOptional, fs::path path,std::string name, std::string root)
         : m_Type(type)
-        , m_Name(std::move(name))
+        , m_NameParamOptional(nameParamOptional)
         , m_Location(std::move(path))
+        , m_Name(std::move(name))
         , m_TemplateRoot(std::move(root)) {
     }
 

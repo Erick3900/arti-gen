@@ -24,11 +24,13 @@ namespace arti {
             m_Vars[k] = v;
         }
 
-        if (! params.contains("name")) {
-            return tl::unexpected<std::string>{ "The 'name' parameter is required" };
-        }
+        if (! m_Template.m_NameParamOptional) {
+            if (! params.contains("name")) {
+                return tl::unexpected<std::string>{ "The 'name' parameter is required" };
+            }
 
-        m_Vars["name"] = params.at("name").as<std::string>();
+            m_Vars["name"] = params.at("name").as<std::string>();
+        }
 
         if (params.contains("define")) {
             auto additionalVars = params.at("define").as<std::vector<std::string>>();

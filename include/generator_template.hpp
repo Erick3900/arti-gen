@@ -104,11 +104,12 @@ namespace arti {
         }
 
       private:
-        generator_template(types type, std::string name, fs::path path, std::string root);
+        generator_template(types type, bool nameParamOptional, fs::path path, std::string name, std::string root);
 
         types m_Type;
-        std::string m_Name;
+        bool m_NameParamOptional;
         fs::path m_Location;
+        std::string m_Name;
         std::string m_TemplateRoot;
         variables_map m_DefaultVars;
     };

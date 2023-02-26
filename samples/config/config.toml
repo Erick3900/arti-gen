@@ -15,3 +15,16 @@ type = "file"
 name = "cp-problem"
 root = "{{ name }}.cpp"
 folder = "cp-problem-template"
+
+[conanfile]
+type = "file"
+name = "conanfile"
+root = "conanfile.txt"
+folder = "conanfile-template"
+name_param_optional = true
+
+[cmake-mult-exec]
+type = "folder"
+name = "cmake-mult-exec"
+root = "{{ name }}"
+folder = "cmake-mult-exec-template"

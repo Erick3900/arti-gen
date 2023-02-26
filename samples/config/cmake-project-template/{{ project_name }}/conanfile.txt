@@ -1,0 +1,5 @@
+[requires]
+{{ conan_libs }}
+
+[generators]
+{{ conan_generator_type }}

@@ -1,0 +1,6 @@
+project_name = "{{ name }}"
+cpp_std = "20"
+project_version = "0.0.1"
+project_description = ""
+conan_libs = "fmt/9.1.0"
+conan_generator_type = "cmake_find_package_multi"

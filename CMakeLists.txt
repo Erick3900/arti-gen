@@ -49,11 +49,25 @@ target_link_libraries(
         ctre::ctre
         Boost::program_options
         tomlplusplus::tomlplusplus
-        ftxui::ftxui 
 )
 
 target_include_directories(
     ${PROJECT_NAME} PRIVATE
         ${CMAKE_CURRENT_SOURCE_DIR}/include
         ${CMAKE_BINARY_DIR}/configured_files/include
+)
+
+set_target_properties(
+    ${PROJECT_NAME} PROPERTIES
+        RUNTIME_OUTPUT_NAME arti-gen
+)
+
+install(
+    TARGETS ${PROJECT_NAME}
+    RUNTIME DESTINATION generator/bin
+)
+
+install(
+    DIRECTORY samples/config
+    DESTINATION generator
 )
